@@ -1,1 +1,49 @@
-<p>home-page works!</p>
+<app-welcome></app-welcome>
+<div class="hidden sm:block mt-16">
+  <img
+    loading="lazy"
+    decoding="async"
+    width="1900"
+    height="300"
+    src="https://cordoba.gob.ar/wp-content/uploads/2024/05/Vacuna-Gripe.png"
+    class="vc_single_image-img attachment-full"
+    alt=""
+  />
+</div>
+<h2 class="mt-16 mb-8 text-center">Servicios más consultados</h2>
+<div class="bg-gray-100 grid grid-rows-10 md:grid-rows-5 lg:grid-rows-2 grid-flow-col auto-cols-fr">
+  @for(card of servicesCards; track card){
+    <div
+      class="card bg-white rounded-lg shadow-lg p-6 m-6 flex items-center justify-center text-5xl hover-scale cursor-pointer"
+    >
+      <span [class]="card.icon" role="img" aria-hidden="true"></span>
+      <h5 class="mt-6">{{card.title}}</h5>
+    </div>
+  }
+</div>
+<h2 class="mt-16 mb-8 text-center">Ciudad</h2>
+<div class="flex items-center justify-center flex-wrap">
+  @for(card of ciudadCards; track card){
+  <div
+    class="card rounded-lg shadow-lg p-6 m-6 flex items-center justify-center text-5xl w-48 h-48 min-h-48 hover-scale cursor-pointer ciudad-card"
+  >
+    <span [class]="card.icon" role="img" aria-hidden="true"></span>
+    <h5 class="text-center text-wrap">{{ card.title }}</h5>
+  </div>
+  }
+</div>
+<h2 class="mt-16 mb-8 text-center">Teléfonos útiles</h2>
+<div class="grid grid-rows-6 smd:grid-rows-4 md:grid-rows-2 lg:grid-rows-1 grid-flow-col gap-4 p-6 m-6">
+  @for(telefono of telefonosUtiles; track telefono;){
+  <div>
+    <a [href]="'tel:' + telefono.number" class="no-underline text-black hover:text-gray-700 cursor-pointer">
+      <div class="text-center">
+        <h3>{{ telefono.number }}</h3>
+      </div>
+      <div>
+        <p class="text-center">{{ telefono.label }}</p>
+      </div>
+    </a>
+  </div>
+  }
+</div>

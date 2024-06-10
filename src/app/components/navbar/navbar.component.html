@@ -1,0 +1,41 @@
+<nav>
+  <div class="hamburger" (click)="openSlidingPanel()">
+    <span
+      class="icon-[radix-icons--hamburger-menu]"
+      role="img"
+      aria-hidden="true"
+    ></span>
+  </div>
+  <app-sliding-panel
+    [isSlidingPanelOpen]="isSlidingPanelOpen"
+    (closePanel)="isSlidingPanelOpen = false"
+  ></app-sliding-panel>
+  <div class="flex justify-center w-full">
+    <div class="logo me-auto">
+      <a href="/">
+        <img
+          src=""
+          alt=""
+          class="h-10"
+        />
+      </a>
+    </div>
+    <ul class="navItems">
+      <li>
+        <a href="#">Gobierno</a>
+      </li>
+      <li>
+        <a href="#">Servicios</a>
+      </li>
+      <li>
+        <a href="#">Noticias</a>
+      </li>
+      <li>
+        <a href="#">Tramites</a>
+      </li>
+      <li>
+        <a href="#">Agenda de la ciudad</a>
+      </li>
+    </ul>
+  </div>
+</nav>
